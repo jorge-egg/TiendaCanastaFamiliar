@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\File;
 
 class UsuarioController extends Controller
 {
-
     public function __construct(){
         $this->middleware('can:adm-btn-editCuenta')->only('edit', 'update');
         $this->middleware('can:adm-btn-destroyCuenta')->only('store', 'destroy');
@@ -89,12 +88,18 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $usuario = Usuarios::findOrFail($id);//buscar el usuario con ese id y poner sus datos en la variabe $usuario
-        $usuario -> nombre = $request->input('nombre');
-        $usuario -> telefono = $request->input('telefono');
-        $usuario -> direccion = $request->input('direccion');
-        $usuario -> correo = $request->input('correo');
-
-        $usuario -> save();
+        if($request->hasFile('imgPerfil')){
+            Storage::delete(public_path('img/perfil'.$usuario->fotoPerfil));//borrar la imagen guardada
+            $img = $request -> file('imgPerfil'); //traer archivo
+            $url = public_path('img/perfil'); //crear url para guardar la imagen
+            copy($img -> getRealPath(), $url."/".$usuario->idUsuario.".".$img->guessExtension());
+            $guardar = $usuario->idUsuario.".".$img -> guessExtension();
+            $usuario -> fotoPerfil = $guardar;
+            $usuario->save();//guardar la imagen
+            $usuario->update($request->all());
+        }else{
+            $usuario->update($request->all());
+        }
         return redirect()->route('usuarios.index');
     }
 

@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Editar</h1>
 @stop
 
 @section('content')
-<form action="{{route('usuarios.update', $user->idUsuario)}}" method="POST"><!--formulario para la edicion de los registro ya existentes del usuario-->
+<form action="{{route('usuarios.update', $user->idUsuario)}}" method="POST" enctype="multipart/form-data"><!--formulario para la edicion de los registro ya existentes del usuario-->
     @csrf
     @method('PUT')
     <div class="mb-3"><!--campo de ingreso de nombre-->
@@ -26,6 +26,11 @@
       <label for="email" class="form-label">Correo electronico</label>
       <input type="email" name="correo" class="form-control" id="email" aria-describedby="emailHelp" value="{{$user->correo}}">
     </div>
+    <div class="mb-3"><!--campo de ingreso de correo electronico-->
+        <label for="img" class="form-label">Imagen de perfil</label>
+        <input type="file" name="imgPerfil" id="img" class="form-control" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+      </div>
+
 
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
