@@ -1,0 +1,37 @@
+.cont-general{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+}
+
+.contenedor{
+    margin-bottom: 50px;
+    height: 350px;
+    width: 250px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.contenedor-img{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: #D4D4D4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.img-producto
+{
+    height: 80%;
+    width: 80%;
+}
+.btn-agregar{
+    border-radius: 20%;
+    background-color: #000000;
+    color: #ffffff;
+    width: 50%;
+    height: 40px;
+}
