@@ -21,6 +21,8 @@
 
 Una vez lista la instalación de nuestro aplicativo, vamos a abrir nuestra consola de comandos y ejecutamos Php artisan serve esto lanzará nuestro Aplicativo de forma virtual, en otra consola ejecutamos npm run dev y ya podrán visualizar todo el contenido, esto estará corriendo en el puerto 8000, es decir Localhost:8000
 
+Para iniciar seccion con el usuario de rol 'Gerente' se usa la cuenta 'admin@gmail.com' con contraseña '123456789'.
+En esta cuenta se podra visualizar los usuarios que son supervisores y clientes, la contraseña de cada usuarios es las misma que la del gerente.
 ## Contenido del aplicativo ##
 
 Se entrega aplicativo completo, desde Manejo de usuarios hasta Modulo de ventas, cumpliendo con los requerimientos impuestos al momento de presentar la Prueba Tecnica.
