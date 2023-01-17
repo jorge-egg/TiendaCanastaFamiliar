@@ -87,6 +87,9 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'imgPerfil' => 'image'
+        ]);
         $usuario = Usuarios::findOrFail($id);//buscar el usuario con ese id y poner sus datos en la variabe $usuario
         if($request->hasFile('imgPerfil')){
             Storage::delete(public_path('img/perfil'.$usuario->fotoPerfil));//borrar la imagen guardada

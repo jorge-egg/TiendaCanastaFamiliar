@@ -43,7 +43,7 @@ class ProductoController extends Controller
             'referencia' => 'required',
             'precio' => 'required',
             'disponibilidad' => 'required',
-           'imagenProducto' => 'required | image' //validacion de requerido y de archivos olo de imagenes
+           'imagenProducto' => 'required | image' //validacion de requerido y de archivos solo de imagenes
         ]);
 
             $img = $request -> file('imagenProducto'); //traer archivo
