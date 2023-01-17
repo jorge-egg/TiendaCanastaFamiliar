@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-01-2023 a las 04:54:40
+-- Tiempo de generación: 17-01-2023 a las 05:59:41
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -351,7 +351,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`idUsuario`, `nombre`, `telefono`, `direccion`, `correo`, `fotoPerfil`) VALUES
 (1, 'Administrador', '4562563', 'empresa', 'admin@gmail.com', NULL),
-(2, 'Andres', '4523659', 'carrera15#25-15', 'andres@gmail.com', NULL),
+(2, 'Andres', '4523659', 'carrera15#25-16', 'andres@gmail.com', '2.jpg'),
 (3, 'Carlos', '4567896', 'carrera35#21-55', 'carlos@gmail.com', NULL),
 (4, 'Sebastian', '1425789', 'carrera10#21-11', 'sebas@gmail.com', NULL),
 (5, 'Nilsa', '4523651', 'carrera 30a #25-14', 'nilsa@gmail.com', NULL),
